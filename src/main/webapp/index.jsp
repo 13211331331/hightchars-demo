@@ -17,35 +17,45 @@
         $(function () {
             $('#container').highcharts({
                 title: {
-                    text: 'Monthly Average Temperature',
-                    x: -20 //center
+                    text: 'Monthly Average Temperature1',
+                    x: -20 //center  title 文字本来在中间，-20：向左边移动20px
                 },
                 subtitle: {
-                    text: 'Source: WorldClimate.com',
-                    x: -20
+                    text: 'Source: WorldClimate.com',   //title下面的二级标题文字
+                    x: -20   //center  title 文字本来在中间，-20：向左边移动20px
                 },
                 xAxis: {
+                    //x轴的文字，数组形式
                     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun','Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
                 },
                 yAxis: {
+                    //y轴上的文字
                     title: {
                         text: 'Temperature (°C)'
                     },
+                    //y轴刻度警戒线
                     plotLines: [{
-                        value: 0,
+                        //在y的值多少时候显示警戒线
+                        value: 20,
+                        //警戒线的宽度
                         width: 1,
+                        //警戒线的背景颜色
                         color: '#808080'
                     }]
                 },
+                //鼠标上移节点显示的文字的后缀
                 tooltip: {
                     valueSuffix: '°C'
                 },
+
+                //右边框框显示的几个数据项的名称内容对齐方式
                 legend: {
                     layout: 'vertical',
                     align: 'right',
                     verticalAlign: 'middle',
-                    borderWidth: 0
+                    borderWidth: 1
                 },
+                //数据项
                 series: [{
                     name: 'Tokyo',
                     data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
