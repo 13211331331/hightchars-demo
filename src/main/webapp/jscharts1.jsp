@@ -1,0 +1,51 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: hhl
+  Date: 2015/5/9
+  Time: 22:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <script type="text/javascript" src="js_img_css/lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js_img_css/lib/jscharts.js"></script>
+    <script>
+
+        $(function () {
+            var myData = new Array(['U.S.A.', 69.5], ['Canada', 2.8], ['Japan & SE.Asia', 5.6], ['Aus. & NZ.', 2.8], ['E.U.', 14.6], ['Others Europe', 2.7], ['Others', 1.9]);
+            var colors = ['#FA5E1F', '#FDCB3F', '#71D743', '#D23333', '#BAE73F', '#AB7B55', '#B381C9'];
+            var myChart = new JSChart('graph', 'bar');
+            myChart.setDataArray(myData);
+            myChart.colorizeBars(colors);
+            myChart.setTitle('Host distribution per macroareas');
+            myChart.setTitleColor('#8E8E8E');
+            myChart.setAxisNameX('Region');
+            myChart.setAxisNameY('%');
+            myChart.setAxisColor('#c6c6c6');
+            myChart.setAxisWidth(1);
+            myChart.setAxisNameColor('#9a9a9a');
+            myChart.setAxisValuesColor('#939393');
+            myChart.setAxisPaddingTop(60);
+            myChart.setAxisPaddingLeft(50);
+            myChart.setAxisPaddingBottom(60);
+            myChart.setTextPaddingBottom(20);
+            myChart.setTextPaddingLeft(15);
+            myChart.setTitleFontSize(11);
+            myChart.setBarBorderWidth(0);
+            myChart.setBarSpacingRatio(50);
+            myChart.setBarValuesColor('#737373');
+            myChart.setGrid(false);
+            myChart.setSize(616, 321);
+            myChart.setBackgroundImage('chart_bg.jpg');
+            myChart.draw();
+        });
+
+
+    </script>
+    <title></title>
+</head>
+<body>
+<div id="graph">Loading graph...</div>
+</body>
+</html>
